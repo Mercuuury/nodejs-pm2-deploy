@@ -15,7 +15,7 @@ mongoose.connect(DB_ADDRESS);
 
 app.use(cors({
   credentials: true,
-  origin: ['https://mesto.kovshik.nomorepartiessbs.ru'],
+  origin: '*',
   allowedHeaders: ['Content-Type', 'Authorization'],
   methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
 }));
