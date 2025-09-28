@@ -10,7 +10,7 @@ const {
   PORT = 3001,
   NODE_ENV = 'production',
   JWT_SECRET,
-  DATABASE_URL,
+  DB_ADDRESS,
 } = process.env;
 
 module.exports = {
@@ -22,7 +22,7 @@ module.exports = {
         PORT,
         NODE_ENV,
         JWT_SECRET,
-        DATABASE_URL,
+        DB_ADDRESS,
       },
     },
   ],
