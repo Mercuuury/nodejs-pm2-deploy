@@ -18,6 +18,7 @@ module.exports = {
     {
       name: 'mesto-backend',
       script: './dist/app.js',
+      cwd: './backend',
       env_production: {
         PORT,
         NODE_ENV,
@@ -36,7 +37,7 @@ module.exports = {
       repo: DEPLOY_REPO,
       path: DEPLOY_PATH,
       'pre-deploy-local': `scp -i ${DEPLOY_SSH_KEY_PATH} .env* ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}`,
-      'post-deploy': 'source ~/.bashrc && npm i && npm run build && pm2 restart ecosystem.config.js',
+      'post-deploy': 'cd backend && npm i && npm run build && pm2 restart ecosystem.config.js --cwd ./backend',
     },
   },
 };
