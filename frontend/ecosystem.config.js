@@ -7,22 +7,19 @@ const {
   DEPLOY_REPO,
   DEPLOY_REF,
   DEPLOY_SSH_KEY_PATH = '~/.ssh/practicum/private_key',
-  PORT = 3001,
+  PORT = 3000,
   NODE_ENV = 'production',
-  JWT_SECRET,
-  DATABASE_URL,
 } = process.env;
 
 module.exports = {
   apps: [
     {
-      name: 'mesto-backend',
-      script: './dist/app.js',
+      name: 'mesto-frontend',
+      script: 'npm',
+      args: 'start',
       env_production: {
         PORT,
         NODE_ENV,
-        JWT_SECRET,
-        DATABASE_URL,
       },
     },
   ],
